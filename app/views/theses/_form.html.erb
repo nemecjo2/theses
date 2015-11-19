@@ -27,6 +27,10 @@
     <%= f.label :faculty %><br>
     <%= f.select :faculty_id, Faculty.all.collect { |f| [f.name, f.id] } %>
   </div>
+  <div class="field">
+    <%= f.label :person %><br>
+    <%= f.select :person_id, Person.all.collect { |p| [p.username, p.id] } %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
