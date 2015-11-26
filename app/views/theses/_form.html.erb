@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :person %><br>
-    <%= f.select :person_id, Person.all.collect { |p| [p.username, p.id] } %>
+    <%= f.select :person_id, Person.all.collect { |p| [p.username, p.id] }, :include_blank => true %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -17,9 +17,7 @@
 
 <p>
   <strong>Faculty:</strong>
-  <% if @thesis.person then %>
-  	<%= link_to @thesis.faculty.name, faculty_path(@thesis.faculty) %> <!-- Pokud existuje fakulta, zavolá metodu name -->
-  <% end %>
+    <%= link_to @thesis.faculty.name, faculty_path(@thesis.faculty) %>
 </p>
 
 <p>

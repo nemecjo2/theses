@@ -13,7 +13,8 @@
 <p>
   <strong>Theses list:</strong><br />
   <% @faculty.theses.each do |t| %>
-    <%= link_to t.title, thesis_path(t) %> by <%= link_to t.person.name + " " + t.person.surname, person_path(t.person) %><br />
+    <%= link_to t.title, thesis_path(t) %>
+    <%= link_to " by " + t.person.name + " " + t.person.surname, person_path(t.person) if t.person %><br />
   <% end %>
 </p>
 
