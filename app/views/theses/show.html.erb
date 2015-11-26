@@ -17,12 +17,16 @@
 
 <p>
   <strong>Faculty:</strong>
-  <%= @thesis.faculty.try!(:name) %> <!-- Pokud existuje fakulta, zavolá metodu name -->
+  <% if @thesis.person then %>
+  	<%= link_to @thesis.faculty.name, faculty_path(@thesis.faculty) %> <!-- Pokud existuje fakulta, zavolá metodu name -->
+  <% end %>
 </p>
 
 <p>
   <strong>Person:</strong>
-<%= @thesis.person.name + " " + @thesis.person.surname if @thesis.person %>
+  <% if @thesis.person then %>
+    <%= link_to @thesis.person.name + " " + @thesis.person.surname, person_path(@thesis.person) %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_thesis_path(@thesis) %> |
